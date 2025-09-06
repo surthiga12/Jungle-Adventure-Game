@@ -1,6 +1,6 @@
 # 🌱 Kids Coding Garden
 
-A fun, educational coding website for kids in classes 5th–8th built with Next.js and Tailwind CSS. Features a visual programming interface using Blockly, an interactive garden canvas, pet characters, progressive levels, and reward systems designed to motivate young learners.
+A fun, educational coding website for kids in classes 5th–8th built with Next.js and Tailwind CSS. Features a visual programming interface using Blockly, an interactive garden canvas, pet characters, progressive levels, and reward systems designed to motivate young learners...
 
 ## ✨ Features
 
