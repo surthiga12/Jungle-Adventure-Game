@@ -1,101 +1,195 @@
-# 🌱 Kids Coding Garden
+# 🌟 Jungle Adventure Game
 
-A fun, educational coding website for kids in classes 5th–8th built with Next.js and Tailwind CSS. Features a visual programming interface using Blockly, an interactive garden canvas, pet characters, progressive levels, and reward systems designed to motivate young learners...
+An exciting educational coding adventure for kids! Navigate through jungle levels using visual programming with **Blockly**, collect coins, unlock characters, and enjoy daily rewards in this immersive learning experience.
 
-## ✨ Features
+![Jungle Adventure Game](https://img.shields.io/badge/Age-6%2B-brightgreen) ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
 
-### 🎯 Core Functionality
-- **Two-Panel Layout**: Blockly visual coding workspace on the left, interactive garden canvas on the right
-- **Visual Programming**: Drag-and-drop coding blocks including Plant Seed, Water, Grow, Play Note, and Repeat loops
-- **Interactive Garden**: Canvas-based garden where pet characters perform actions step by step
-- **Progressive Levels**: 5 carefully designed levels from basic planting to complex loops and melodies
+## 🎮 Game Features
 
-### 🎮 Game Elements
-- **Streak System**: Track consecutive successful levels with 🔥 streak counter
-- **Rewards**: Earn ⭐ stars, unlock 🏆 badges, and collect new pet characters
-- **Pet Characters**: Cute animated pets (cat, bird, panda) that dance and celebrate with you
-- **Sound Effects**: Success sounds, error feedback, musical notes, and celebration fanfares
-- **Visual Effects**: Sparkling flowers, pet animations, and level completion celebrations
+### 🧩 **Visual Programming with Blockly**
+- **Drag & Drop Coding**: Use intuitive blocks to program your character
+- **Movement Commands**: Move Forward, Move Right, Move Left, Move Down
+- **Interactive Workspace**: Real-time code generation and execution
+- **Educational Focus**: Learn programming concepts through play
 
-### 📚 Educational Design
-- **Level Progression**: 
-  - Level 1: Plant your first seed
-  - Level 2: Complete plant lifecycle (plant → water → grow)
-  - Level 3: Use loops to create multiple flowers efficiently
-  - Level 4: Combine gardening with music creation
-  - Level 5: Master challenge with complex sequences
-- **Hints System**: Contextual tips for each level
-- **Progress Tracking**: LocalStorage persistence for streaks, stars, and unlocked content
+### 🎯 **Adventure Gameplay**
+- **Multiple Levels**: Progressive difficulty with unique challenges
+- **Character Movement**: Guide your explorer through jungle mazes
+- **Collectibles**: Gather coins and reach chocolate rewards
+- **Goal-Based**: Complete objectives to advance to next levels
 
-### 🎨 Kid-Friendly Design
-- **Bright & Playful**: Gradient backgrounds, colorful blocks, emoji-rich interface
-- **Responsive**: Works perfectly on tablets, laptops, and desktops
-- **Motivational**: Positive feedback, celebrations, and achievement unlocks
-- **Professional Quality**: Clean code, smooth animations, polished interactions
+### 💰 **Economy & Rewards System**
+- **Coin Collection**: Earn coins by completing levels
+- **Character Shop**: Purchase and unlock new characters
+- **Daily Login Rewards**: 7-day reward cycle with coins and characters
+- **Progressive Unlocks**: More characters available as you play
+
+### 🎭 **Character Collection**
+- **Default Characters**: Adventurer Boy 👦 & Girl 👧 (Free)
+- **Jungle Animals**: 
+  - 🐵 Monkey Max (50 coins)
+  - 🐘 Elephant Ellie (70 coins)
+  - 🦁 Lion Leo (80 coins)
+- **Water Creatures**:
+  - 🐸 Froggy Fred (60 coins)
+  - 🐢 Turbo the Turtle (90 coins)
+- **Sky Animals**:
+  - 🦜 Polly the Parrot (110 coins)
+  - 🦅 Eagle Eddie (120 coins)
+
+### 🎉 **Celebration & Effects**
+- **Chocolate Burst**: Spectacular particle effects when reaching goals
+- **Level Completion**: Congratulations screen with candy animations
+- **Sound Effects**: Engaging audio feedback
+- **Visual Polish**: Smooth animations and transitions
+
+### 📅 **Daily Login System**
+- **7-Day Cycle**: Progressive rewards for consecutive logins
+- **Coin Rewards**: Daily coin bonuses
+- **Character Unlocks**: Special characters on day 7
+- **Streak Tracking**: Maintain your login streak
 
 ## 🚀 Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
 
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/surthiga12/Jungle-Adventure-Game.git
+cd Jungle-Adventure-Game
+```
+
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. **Run the development server**
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Open your browser**
+Navigate to [http://localhost:3000](http://localhost:3000) to start playing!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 How to Play
+
+1. **Daily Login**: Claim your daily reward (first-time players)
+2. **Character Selection**: Choose your favorite character
+3. **Level Selection**: Pick an unlocked level to play
+4. **Programming**: Drag Blockly blocks to create movement commands
+5. **Execution**: Click "Run" to watch your character move
+6. **Collect**: Gather coins and reach the chocolate to complete levels
+7. **Progress**: Use coins to unlock new characters and levels
 
 ## 🏗️ Project Structure
 
 ```
 src/
 ├── app/
-│   ├── page.tsx          # Main application page
-│   ├── layout.tsx        # Root layout
-│   └── globals.css       # Global styles
+│   ├── page.tsx                 # Main game orchestrator
+│   ├── layout.tsx              # Root layout
+│   ├── globals.css             # Global styles
+│   └── components/
+│       └── CharacterSelection.tsx   # Character selection UI
 ├── components/
-│   ├── BlocklyWorkspace.tsx   # Visual coding interface
-│   └── GardenCanvas.tsx       # Interactive garden canvas
+│   ├── BlocklyWorkspace.tsx    # Visual programming interface
+│   ├── GridGameCanvas.tsx      # Game rendering engine
+│   ├── DailyLoginReward.tsx    # Daily reward system
+│   ├── JungleMapNew.tsx        # Level selection map
+│   └── CharacterSelection.tsx   # Character management
 └── utils/
-    ├── gameData.ts       # Level definitions, badges, pets
-    ├── gameManager.ts    # Progress tracking, localStorage
-    └── soundManager.ts   # Audio effects and music
+    ├── characterManager.ts      # Character data & purchasing
+    ├── gameData.ts             # Level definitions & configuration
+    ├── gameManager.ts          # Game state management
+    ├── streakManager.ts        # Daily streak tracking
+    └── soundManager.ts         # Audio system
 ```
 
-## 🎓 Educational Value
+## 🎓 Educational Benefits
 
-### Programming Concepts Taught
-- **Sequence**: Ordering commands in the right steps
-- **Loops**: Using repeat blocks for efficiency
-- **Cause and Effect**: Seeing immediate visual results from code
-- **Problem Solving**: Completing increasingly complex challenges
-- **Logical Thinking**: Breaking down tasks into smaller steps
+### 💻 **Programming Concepts**
+- **Sequential Thinking**: Ordering commands logically
+- **Problem Solving**: Breaking down movement into steps
+- **Debugging**: Testing and refining code
+- **Logic Flow**: Understanding cause and effect
 
-### Skills Developed
-- Computational thinking
-- Pattern recognition
-- Sequential reasoning
-- Creative problem solving
-- Persistence and debugging mindset
+### 🧠 **Cognitive Skills**
+- **Spatial Reasoning**: Navigation and direction
+- **Planning**: Strategy for efficient movement
+- **Pattern Recognition**: Level structure understanding
+- **Persistence**: Overcoming challenges
 
-## 🛠️ Technologies Used
+### 🎯 **Game Design Learning**
+- **Goal Setting**: Clear objectives and rewards
+- **Progression Systems**: Unlockable content
+- **User Experience**: Intuitive interface design
+- **Motivation**: Achievement and collection mechanics
 
-- **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe development
-- **Tailwind CSS**: Utility-first styling
-- **Blockly**: Google's visual programming library
-- **Canvas API**: Custom garden rendering and animations
-- **Web Audio API**: Real-time sound effects and music
-- **LocalStorage**: Progress persistence
+## 🛠️ Technologies
+
+### **Frontend**
+- ![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black?logo=next.js)
+- ![React](https://img.shields.io/badge/React-19-blue?logo=react)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan?logo=tailwindcss)
+
+### **Game Engine**
+- ![Canvas API](https://img.shields.io/badge/Canvas-API-orange)
+- ![Blockly](https://img.shields.io/badge/Blockly-Google-red)
+- ![Web Audio](https://img.shields.io/badge/Web%20Audio-API-green)
+
+### **Storage & State**
+- ![LocalStorage](https://img.shields.io/badge/LocalStorage-Browser-yellow)
+- ![React Hooks](https://img.shields.io/badge/React-Hooks-blue)
+
+## 🎮 Game Reset
+
+For testing or fresh starts, use the built-in reset functionality:
+- **In-Game**: Red "🔄 Reset Game" button in character selection
+- **External**: Open `reset-game.html` for complete data wipe
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🌟 Acknowledgments
+
+- **Blockly** by Google for visual programming capabilities
+- **Next.js** team for the amazing React framework
+- **Tailwind CSS** for utility-first styling
+- **Educational gaming** community for inspiration
 
 ---
 
-**Made with ❤️ for the next generation of programmers** 🚀
+**🎯 Perfect for young coders, educators, and anyone who loves adventure games!**
 
-*Empowering kids to code, create, and grow through playful learning experiences.*
+*Made by Surthiga 💙 to inspire the next generation of programmers* 🚀
+
+### 📊 Stats
+![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-2000%2B-brightgreen)
+![Components](https://img.shields.io/badge/Components-8%2B-blue)
+![Characters](https://img.shields.io/badge/Characters-7%2B-purple)
+![Levels](https://img.shields.io/badge/Levels-Progressive-orange)
