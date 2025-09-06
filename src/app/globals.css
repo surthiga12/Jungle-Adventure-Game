@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f0f9f0;
+  --foreground: #1a5d1a;
+  --primary: #228b22;
+  --primary-foreground: #ffffff;
+  --secondary: #32cd32;
+  --accent: #90ee90;
+  --jungle-dark: #006400;
+  --jungle-light: #90ee90;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0d3d0d;
+    --foreground: #e0ffe0;
+    --primary: #32cd32;
+    --secondary: #90ee90;
+    --accent: #98fb98;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Jungle theme styles */
+.jungle-card {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  border: 2px solid #006400;
+  transition: all 0.3s ease;
+}
+
+.jungle-card:hover {
+  background: linear-gradient(135deg, #32cd32 0%, #90ee90 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(34, 139, 34, 0.4);
+}

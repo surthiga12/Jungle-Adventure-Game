@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Game Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .success {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
+        .warning {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Game Data Reset</h1>
+        <p>This will completely reset your game progress.</p>
+        
+        <div class="warning">
+            ⚠️ <strong>Warning:</strong> This will delete ALL your game progress including:
+            <ul style="text-align: left; margin: 15px 0;">
+                <li>💰 All coins and purchased characters</li>
+                <li>🏆 Level progress and unlocked levels</li>
+                <li>📅 Daily login streak and rewards</li>
+                <li>🎯 Selected character preferences</li>
+                <li>📊 All saved game data</li>
+            </ul>
+        </div>
+
+        <button onclick="resetGame()">🔄 Reset All Game Data</button>
+        <button onclick="window.location.href='http://localhost:3000'">🎮 Go to Game</button>
+        
+        <div id="success" class="success">
+            ✅ <strong>Game Reset Complete!</strong><br>
+            All data has been cleared. You can now start fresh!
+        </div>
+    </div>
+
+    <script>
+        function resetGame() {
+            // Clear all localStorage data related to the game
+            const keysToRemove = [
+                'currentLevel',
+                'unlockedLevels', 
+                'totalCoins',
+                'unlockedCharacters',
+                'selectedCharacter',
+                'gameStreak',
+                'dailyLogin',
+                'lastLoginDate',
+                'gameData'
+            ];
+
+            // Remove specific keys
+            keysToRemove.forEach(key => {
+                localStorage.removeItem(key);
+            });
+
+            // Also clear any keys that might contain game data
+            for (let i = localStorage.length - 1; i >= 0; i--) {
+                const key = localStorage.key(i);
+                if (key && (
+                    key.includes('game') || 
+                    key.includes('level') || 
+                    key.includes('character') || 
+                    key.includes('coin') ||
+                    key.includes('streak') ||
+                    key.includes('daily') ||
+                    key.includes('login')
+                )) {
+                    localStorage.removeItem(key);
+                }
+            }
+
+            // Show success message
+            document.getElementById('success').style.display = 'block';
+            
+            // Optional: Also clear sessionStorage
+            sessionStorage.clear();
+
+            console.log('Game data reset complete!');
+        }
+    </script>
+</body>
+</html>
