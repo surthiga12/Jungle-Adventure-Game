@@ -194,5 +194,5 @@ This project is open source and available under the [MIT License](LICENSE).
 ![Characters](https://img.shields.io/badge/Characters-7%2B-purple)
 ![Levels](https://img.shields.io/badge/Levels-Progressive-orange)
 
-##Project Information
+## Project Information
 This is an Intern Project Made For NIPIX TECHNOLOGIES
