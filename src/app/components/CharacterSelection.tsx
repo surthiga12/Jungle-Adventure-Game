@@ -36,7 +36,7 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
           <h1 className="text-5xl font-bold text-green-800 mb-4">
             🌴 Choose Your Safari Explorer! 🌴
           </h1>
-          <p className="text-xl text-green-700 mb-2">Pick your explorer for the Nipix Code Safari adventure!</p>
+          <p className="text-xl text-green-700 mb-2">Pick your explorer for the Jungle Adventure Game!</p>
           <p className="text-lg text-green-600 mb-4">Learn To Code, Explore the Jungle!</p>
           <div className="bg-amber-100 rounded-full px-6 py-2 inline-block">
             <span className="text-2xl font-bold text-amber-800">💰 {totalCoins} Coins</span>
@@ -134,6 +134,9 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
           <p className="text-lg text-green-700">
             🎮 Earn coins by completing levels to unlock more animal friends! 🏆
           </p>
+          <div className="mt-4 text-sm text-gray-600">
+            Made with 💙 by surthiga
+          </div>
         </div>
       </div>
     </div>

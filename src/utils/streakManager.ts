@@ -7,7 +7,7 @@ export interface DailyStreak {
 }
 
 export class StreakManager {
-  private readonly STORAGE_KEY = 'nipix_safari_streak';
+  private readonly STORAGE_KEY = 'jungle_adventure_streak';
 
   getStreak(): DailyStreak {
     if (typeof window === 'undefined') {

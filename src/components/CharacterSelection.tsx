@@ -23,7 +23,7 @@ export default function CharacterSelection({ onCharacterSelected }: CharacterSel
     <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400 flex items-center justify-center">
       <div className="bg-white/90 rounded-3xl shadow-2xl p-8 max-w-md w-full mx-4">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-purple-800 mb-2">� Nipix Code Safari</h1>
+          <h1 className="text-4xl font-bold text-purple-800 mb-2">🌴 Jungle Adventure Game</h1>
           <p className="text-lg text-gray-600">Learn To Code, Explore the Jungle!</p>
         </div>
 
@@ -95,6 +95,9 @@ export default function CharacterSelection({ onCharacterSelected }: CharacterSel
 
         <div className="mt-6 text-center text-sm text-gray-500">
           Use code blocks to move your character through exciting levels!
+        </div>
+        <div className="mt-2 text-center text-xs text-gray-400">
+          Made with 💙 by surthiga
         </div>
       </div>
     </div>

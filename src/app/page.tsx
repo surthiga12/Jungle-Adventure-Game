@@ -285,6 +285,9 @@ export default function Home() {
             <div className="text-sm text-gray-600 mt-2">
               {streakManager.getStreakMessage(dailyStreak)}
             </div>
+            <div className="text-xs text-gray-500 mt-2">
+              Made with 💙 by surthiga
+            </div>
           </div>
           
           <div className="grid grid-cols-5 gap-4 mb-8">
@@ -330,11 +333,14 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-white flex items-center">
             <span className="mr-3 text-4xl">🌴</span>
             <span className="bg-gradient-to-r from-green-200 to-teal-200 bg-clip-text text-transparent">
-              Nipix Code Safari
+              Jungle Adventure Game
             </span>
             <span className="ml-3 text-3xl">🧭</span>
           </h1>
           <p className="text-green-100 text-sm mt-1 text-center">Learn To Code, Explore the Jungle!</p>
+          <div className="text-xs text-green-200 mt-1 text-center opacity-75">
+            Made with 💙 by surthiga
+          </div>
           <div className="flex items-center space-x-6">
             <button
               onClick={() => setShowLevelSelect(!showLevelSelect)}
@@ -455,6 +461,13 @@ export default function Home() {
         </div>
         
       </div>
+
+      {/* Footer Credits */}
+      <footer className="bg-gradient-to-r from-green-700 via-emerald-700 to-teal-700 text-center py-2 relative z-10">
+        <div className="text-xs text-green-200 opacity-75">
+          Made with 💙 by surthiga
+        </div>
+      </footer>
 
       {/* Level Complete Banner */}
       {showLevelComplete && (
